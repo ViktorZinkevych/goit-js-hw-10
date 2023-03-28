@@ -42,21 +42,7 @@ function render(countryName) {
     if (countryName.length > 10){
         return Notify.info('Too many matches found. Please enter a more specific name.')
     }
-    else if (2 < countryName.length < 10){
-            const markupAll = countryName
-               .map(({ name, population, capital, flags, languages }) => {
-                            return `<li><img src="${flags.svg}"
-                            alt="flag" width="10">
-                            <p class="country-item">${name.official}</p>
-                            </li>`
-                        }).join('');
-                        console.log(markupAll);
-                        countryList.innerHTML = markupAll
-                    }
-    
-        
-    
-    else if (countryName.length === 1) {
+    else if(countryName.length === 1) {countryInfo.innerHTML = '';
          const markup = countryName
         // .filter(el => el.name.official === e.target.textContent)
         .map(({ name, population, capital, flags, languages }) => {
@@ -70,6 +56,23 @@ function render(countryName) {
         console.log(markup);
         countryList.innerHTML = markup;
     }
+    else if (2 <= countryName.length <= 10){
+        countryList.innerHTML = '';
+            const markupAll = countryName
+               .map(({ name, population, capital, flags, languages }) => {
+                            return `<li><img src="${flags.svg}"
+                            alt="flag" width="30">
+                            <p class="country-item">${name.official}</p>
+                            </li>`
+                        }).join('');
+                        console.log(markupAll);
+                        countryInfo.innerHTML = markupAll
+                        return
+                    }
+    
+        
+    
+    
     
             
     
