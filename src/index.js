@@ -42,17 +42,17 @@ function render(countryName) {
     if (countryName.length > 10){
         return Notify.info('Too many matches found. Please enter a more specific name.')
     }
-    // else if (countryName.length < 10){
-    //         const markupAll = countryName
-    //            .map(({ name, population, capital, flags, languages }) => {
-    //                         return `<li><img src="${flags.svg}"
-    //                         alt="flag" width="10">
-    //                         <p class="country-item">${name.official}</p>
-    //                         </li>`
-    //                     }).join('');
-    //                     console.log(markupAll);
-    //                     countryList.innerHTML = markupAll
-    //                 }
+    else if (2 < countryName.length < 10){
+            const markupAll = countryName
+               .map(({ name, population, capital, flags, languages }) => {
+                            return `<li><img src="${flags.svg}"
+                            alt="flag" width="10">
+                            <p class="country-item">${name.official}</p>
+                            </li>`
+                        }).join('');
+                        console.log(markupAll);
+                        countryList.innerHTML = markupAll
+                    }
     
         
     
